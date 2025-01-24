@@ -35,6 +35,11 @@
   --font-main: impact;
 }
 
+html {
+  scroll-behavior: smooth;
+  animation-delay: 1s;
+}
+
 body {
   max-width: 1720px;
   min-width: 300px;
@@ -50,7 +55,6 @@ body {
 /* Profile grid */
 
 #profile-section {
-  /* background-color: orangered; */
   min-height: 400px;
   width: 400px;
   position: sticky;
@@ -67,12 +71,19 @@ body {
   font-size: var(--text-sm);
   color: var(--light-dark-color);
 }
+#profile-section ul li .ref-container {
+  /* padding: 10px; */
+  /* background-color: orangered; */
+}
+.ref-container a {
+  margin-left: 5px;
+}
 
 .pfp-img-container {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  /* background-color: orange; */
+  background-color: seashell;
   overflow: hidden;
 }
 
@@ -86,7 +97,6 @@ body {
 .container {
   min-height: 100%;
   overflow-y: auto;
-  /* background-color: rebeccapurple; */
   height: 100vh;
 }
 
@@ -94,12 +104,7 @@ body {
   padding: 64px 64px 64px 0px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  /* background-color: gainsboro; */
   gap: 20px;
-}
-
-.grid-box {
-  /* border: 1px solid black; */
 }
 
 .grid-box-1 {
@@ -123,9 +128,6 @@ body {
   grid-column: span 2;
   height: 180px;
   width: 100%;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  border-radius: 40px; */
 }
 
 .grid-box-5 {
@@ -177,16 +179,11 @@ body {
   display: flex;
   gap: 5px;
 }
-/* .grid-box .social-media-container .media,
-.grid-box .social-media-container .media-text {
-  width: 50%;
-} */
 
 .media {
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* padding: 10px; */
 }
 
 .grid-box .social-media-container .media svg {
@@ -228,6 +225,113 @@ body {
   object-fit: cover;
 }
 
+/* work-bento-layout */
+
+.work-bento-layout {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  padding: 10px;
+  gap: 20px;
+  padding: 20px;
+}
+
+.work-card {
+  grid-column: span 1;
+  border-radius: 40px;
+  background-color: rgb(246, 244, 242);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.work-card .logo {
+  width: 45px;
+  height: 45px;
+  background-color: ghostwhite;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-card .img-container {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.work-card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bento-layout-add {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 64px;
+}
+
+.bento-layout-add .container-add {
+  background-color: seashell;
+  height: 160px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.bento-layout-add .container-add video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bento-layout-add-gallery {
+  width: 100%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.bento-layout-add-gallery .gallery-box {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.gallery-box-1 {
+  grid-column: span 3;
+  grid-row: span 7;
+}
+.gallery-box-2 {
+  grid-column: span 9;
+  grid-row: span 7;
+}
+.gallery-box-3 {
+  grid-column: span 5;
+  grid-row: span 5;
+}
+.gallery-box-4 {
+  grid-column: span 5;
+  grid-row: span 5;
+}
+.gallery-box-5 {
+  grid-column: span 2;
+  grid-row: span 5;
+}
+
+.gallery-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 1258px) {
   .main-grid-container {
     grid-template-columns: repeat(1, 1fr);
@@ -236,8 +340,21 @@ body {
     margin-top: 20px;
   }
 
+  .work-bento-layout,
+  .bento-layout-add {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .bento-layout-add-gallery {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 600px;
+  }
+  .bento-layout-add-gallery .gallery-box {
+    border-radius: 20px;
+  }
+
   #profile-section {
-    /* background-color: orangered; */
     margin: auto;
     position: static;
     padding: 30px;
@@ -282,6 +399,29 @@ body {
 
   .grid-box-7 {
     grid-column: span 4;
+  }
+
+  /* gallery */
+
+  .gallery-box-1 {
+    grid-column: span 8;
+    grid-row: span 5;
+  }
+  .gallery-box-2 {
+    grid-column: span 4;
+    grid-row: span 5;
+  }
+  .gallery-box-3 {
+    grid-column: span 12;
+    grid-row: span 5;
+  }
+  .gallery-box-4 {
+    grid-column: span 6;
+    grid-row: span 5;
+  }
+  .gallery-box-5 {
+    grid-column: span 6;
+    grid-row: span 5;
   }
 }
 
