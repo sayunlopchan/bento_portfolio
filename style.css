@@ -177,10 +177,10 @@ body {
   display: flex;
   gap: 5px;
 }
-.grid-box .social-media-container .media,
+/* .grid-box .social-media-container .media,
 .grid-box .social-media-container .media-text {
   width: 50%;
-}
+} */
 
 .grid-box .social-media-container .media svg {
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
@@ -191,6 +191,7 @@ body {
 }
 
 .social-media-container .media a {
+  margin-top: 10px;
   color: white;
   padding: 5px 15px;
   background-color: black;
