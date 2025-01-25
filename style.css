@@ -55,11 +55,11 @@ body {
 /* Profile grid */
 
 #profile-section {
-  min-height: 400px;
-  width: 400px;
-  position: sticky;
-  top: 64px;
-  padding: 64px;
+  /* min-height: 400px; */
+  /* width: 400px; */
+  /* position: sticky; */
+  /* top: 64px; */
+  padding: 24px;
 }
 
 #profile-section h1 {
